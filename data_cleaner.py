@@ -2,26 +2,6 @@ import pandas as pd
 import re
 
 def main():
-    '''
-    Cleaning steps:
-    1. Concat listing and sold df
-    2. Remove "checked" column
-    3. Fill nan/nulls w/ blanks
-    4. Remove html tags
-    5. Drop duplicates: keep based on sold or not
-    6. Street -> check for any extra characters (not alphanumeric or '#')
-    7. City -> Capitalize first letter only, remove non-alpha chars?
-    8. State -> state abbr.
-    9. Zip Code -> 5 digit
-    10. Price -> digits only
-    11. Bed/Sqft -> digits only
-    12. Bath -> float only
-    13. Home Type -> check uniques
-    14. Neighbord -> Remove "Transportation in "
-    15. Scores -> 2 digit only
-    16. Sold History -> formatting and also remove duplicates (maybe use dict {date:price} if date not in dict.keys)
-    '''
-    
     # load listings to dataframes
     curr_listings_df = pd.read_csv("data/prepared/rs_df_listed.csv")
     sold_listings_df = pd.read_csv("data/prepared/rs_df_sold.csv")
