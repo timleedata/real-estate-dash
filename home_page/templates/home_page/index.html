@@ -1,0 +1,172 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <title>TL Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+        
+        body, html {
+          height: 100%;
+          line-height: 1.8;
+        }
+        
+        /* Full height image header */
+        .bgimg-1 {
+          background-position: center;
+          background-size: cover;
+          background-color: black;
+          min-height: 100%;
+        }
+        
+        .w3-bar .w3-button {
+          padding: 16px;
+    }
+    </style>
+    <body>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+                <a href="#home" class="w3-bar-item w3-button w3-wide">TL Data</a>
+                <!-- Right-sided navbar links -->
+                <div class="w3-right w3-hide-small">
+                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+                    <a href="#about" class="w3-bar-item w3-button">About</a>
+                    <a href="#resume" class="w3-bar-item w3-button">Resume</a>
+                    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                </div>
+                
+                <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                    <i id="menuBars" class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar on small screens when clicking the menu icon -->
+        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+            <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button">Projects</a>
+            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+            <a href="#resume" onclick="w3_close()" class="w3-bar-item w3-button">Resume</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
+        </nav>
+        
+        <!-- Home Section -->
+        <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+            <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
+              <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">TIM LEE</h1>
+              <h5 class="w3-hide-large w3-xlarge" style="white-space:nowrap">TIM LEE</h5>
+              <h3 class="w3-hide-medium w3-hide-small w3-large" style="white-space:nowrap">Software engineer | Data analyst</h3>
+              <h5 class="w3-hide-large w3-medium" style="white-space:nowrap">Software engineer | Data analyst</h5>
+            </div>
+        </header>
+        
+        <!-- Projects Section -->
+        <div class="w3-container w3-center" style="padding:128px 16px" id="projects">
+            <h3 class="w3-center">PROJECTS</h3>
+            <p class="w3-center w3-large">Here are some of my latest work</p>
+              
+            <div class="w3-row-padding" style="margin-top:64px">
+                <div class="w3-half l3 m3">
+                    <img src="{% static 'images/tmp_atl_housing_proj.png' %}" onclick="onClick(this)" class="w3-hover-opacity w3-image-bordered" alt="Atlanta House Market Visualization">
+                </div>
+                <div class="w3-half l3 m3">
+                    <img src="{% static 'images/coming_soon.png' %}" onclick="onClick(this)" class="w3-hover-opacity w3-image-bordered" alt="KPMG Data Analytics Virtual Internship (Coming Soon)">
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <!-- About Section -->
+        <div class="w3-container" style="padding:128px 16px" id="about">
+            <h3 class="w3-center">ABOUT</h3>
+            <p class="w3-center w3-large"><q>My goal is to make positive impacts using data</q></p>
+            <div class="w3-row-padding w3-center" style="margin-top:64px">
+                <div class="w3-quarter">
+                    <i class="w3-margin-bottom w3-jumbo w3-center"></i>
+                    <p class="w3-large">Responsive</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div class="w3-quarter">
+                    <i class="w3-margin-bottom w3-jumbo"></i>
+                    <p class="w3-large">Passion</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div class="w3-quarter">
+                    <i class="w3-margin-bottom w3-jumbo"></i>
+                    <p class="w3-large">Design</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div class="w3-quarter">
+                    <i class="w3-margin-bottom w3-jumbo"></i>
+                    <p class="w3-large">Support</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+            <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Image">&#9747</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption" class="w3-opacity w3-large"></p>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+            <h3 class="w3-center">CONTACT</h3>
+            <div class="w3-center" style="font-family:Tahoma">
+                <div class="w3-large" style="display:inline-block; text-align:left">
+                    <i class="fa fa-envelope-square w3-large w3-margin-right"></i>timleedata@gmail.com<br>
+                    <a href="https://www.linkedin.com/in/lee-tim/" style="text-decoration: none" target="_blank"><i class="fa fa-linkedin-square w3-margin-right"></i>linkedin.com/in/lee-tim</a><br>
+                    <a href="https://www.github.com/timleedata/" style="text-decoration: none" target="_blank"><i class="fa fa-github-square w3-margin-right"></i>github.com/timleedata</a><br>
+                </div>
+            </div> 
+        </div>
+        
+        <!-- Footer -->
+        <footer class="w3-center w3-black w3-padding-64">
+            <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Beam me up</a>
+            <p class="w3-small">© 2020 Tim Lee Data<br>This page was last updated on 29 December 2020.</p>
+        </footer>
+         
+        <script>
+            // Modal Image Gallery
+            function onClick(element) {
+              document.getElementById("img01").src = element.src;
+              document.getElementById("modal01").style.display = "block";
+              var captionText = document.getElementById("caption");
+              captionText.innerHTML = element.alt;
+            }
+            
+            
+            // Toggle between showing and hiding the sidebar when clicking the menu icon
+            var mySidebar = document.getElementById("mySidebar");
+            var icon = document.getElementById("menuBars");
+            
+            function w3_open() {
+              if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                icon.className = 'fa fa-bars';
+              } else {
+                mySidebar.style.display = 'block';
+                icon.className = 'fa fa-times-rectangle-o';
+              }
+            }
+            
+            // Close the sidebar with the close button
+            function w3_close() {
+                mySidebar.style.display = "none";
+                icon.className = 'fa fa-bars';
+            }
+        </script>
+    </body>
+</html>
