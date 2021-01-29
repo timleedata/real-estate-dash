@@ -8,6 +8,7 @@
 **Python Version:** 3.6.12  
 **Packages:** Plotly Dash (vTBD), Django (v3.1.5), gunicorn (v20.0.4), whitenoise (v5.2.0)  
 **Deploying Django app on Heroku with Docker:** https://testdriven.io/blog/deploying-django-to-heroku-with-docker/
+**Integrating Plotly Dash in Django:** https://thinkinfi.com/integrate-plotly-dash-in-django/  
 **Custom Domain w/ Heroku:** https://devcenter.heroku.com/articles/custom-domains  
 **HTML/CSS Template:** https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup  
 
