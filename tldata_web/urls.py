@@ -13,11 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, include
 import home_page.views as hv
 import atlmkt_dash.views as av
+import atlmkt_dash.plotly_test
 
 urlpatterns = [
+    path('django_plotly_dash/', include('django_plotly_dash.urls')),
     path('', hv.home_view, name="home_page"),
     path('atlmktdash', av.atlmktdash_view, name="atlmkt_dash"),
 ]

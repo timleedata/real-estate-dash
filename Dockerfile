@@ -1,5 +1,5 @@
 # Pull official base image
-FROM python:3.6.12
+FROM python:3.6.12-slim
 
 # Set work directory
 WORKDIR /app
@@ -18,6 +18,9 @@ COPY . .
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
+
+# Apply migrations
+RUN python manage.py migrate --noinput
 
 # run gunicorn
 CMD gunicorn tldata_web.wsgi:application --bind 0.0.0.0:$PORT
